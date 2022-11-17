@@ -7,9 +7,4 @@
     <RootNamespace>People_Assignment</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Services\" />
-    <Folder Include="Models\Repos\" />
-  </ItemGroup>
-
 </Project>
