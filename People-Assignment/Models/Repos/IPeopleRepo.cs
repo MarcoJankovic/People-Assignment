@@ -4,7 +4,7 @@ namespace People_Assignment.Models.Repos
 {
     public interface IPeopleRepo
     {
-        public Person Create(Person person);
+        public Person Create(string name, string phoneNumber, string cityName);
         public List<Person> Read();
         public Person Read(int personId);
         public bool Update(Person person);
