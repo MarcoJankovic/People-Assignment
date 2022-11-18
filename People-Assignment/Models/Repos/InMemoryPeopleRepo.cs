@@ -60,6 +60,10 @@ namespace People_Assignment.Models.Repos
             return peopleList.Remove(person);
         }
 
+        public Person Create(Person person)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
