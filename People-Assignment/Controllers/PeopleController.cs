@@ -4,7 +4,18 @@ namespace People_Assignment.Controllers
 {
     public class PeopleController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Person()
+        {
+            return View();
+        }
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Details()
         {
             return View();
         }
