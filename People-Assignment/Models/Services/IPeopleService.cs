@@ -12,7 +12,7 @@ namespace People_Assignment.Models.Services
         List<Person> Search(string search);
         Person FindById(int personId);
 
-        public bool Edit(int personId, CreatePersonViewModel editPeople)
+        public bool Edit(int personId, CreatePersonViewModel editPeople);
         public bool Remove(int personId);
 
     }
