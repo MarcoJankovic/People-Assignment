@@ -3,38 +3,35 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create a new person</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" method="post">
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CityName" class="control-label"></label>
-                <input asp-for="CityName" list="cityList" class="form-control" />
-                <span asp-validation-for="CityName" class="text-danger"></span>
-                <datalist id="cityList">
-                    @foreach(string city in Model.CityList)
-                    {
-                        <option value="@city">@city</option>
-                    }
-                </datalist>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-success"/>
-            </div>
-        </form>
+<div class="col-md-4">
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber"></label>
+            <input class="form-control" asp-for="PhoneNumber" />
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CityName"></label>
+            <input class="form-control" asp-for="CityName" />
+            <span asp-validation-for="CityName"></span>
+            <datalist id="cityList">
+                @foreach(string cityName in Model.CityList)
+                {
+                    <option value="@cityName">@cityName</option>
+                }
+            </datalist>
+        </div>
+    </form>
 
-    </div>
+    <button class="btn btn-primary ">Submit</button>
+
 </div>
-
 

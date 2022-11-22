@@ -21,7 +21,6 @@ namespace People_Assignment.Models.Repos
             peopleList.Add(person);
             return person;
         }
-
         public List<Person> Read()
         {
             return peopleList;
@@ -58,11 +57,6 @@ namespace People_Assignment.Models.Repos
         public bool Delete(Person person)
         {
             return peopleList.Remove(person);
-        }
-
-        public Person Create(Person person)
-        {
-            throw new NotImplementedException();
         }
     }
 }
