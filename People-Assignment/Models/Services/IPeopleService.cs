@@ -6,21 +6,15 @@ namespace People_Assignment.Models.Services
 
     public interface IPeopleService
     {
-        Person Create(CreatePersonViewModel createPeople);
+        Person Add(CreatePersonViewModel person);
 
-        List<Person> GetAll();
+        List<Person> All();
+        List<Person> Search(string search);
+        Person FindById(int personId);
 
-        List<Person> FindByCity(string city);
+        public bool Edit(int personId, CreatePersonViewModel editPeople)
+        public bool Remove(int personId);
 
-        Person FindById(int id);
-
-        public void Edit(int id, CreatePersonViewModel editPeople)
-        {
-
-        }
-        public bool Remove(int id);
-
-        Person LastAdded();
     }
 
 }
