@@ -20,3 +20,7 @@ body {
     background-repeat: no-repeat;
     color:white;
 }
+
+a {
+    color:white !important;
+}

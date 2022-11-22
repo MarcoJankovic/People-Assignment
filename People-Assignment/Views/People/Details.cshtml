@@ -1,7 +1,26 @@
-﻿
+﻿@model Person
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
 
+<div class="row">
+    <div class="col-3">
+        <label>Name</label>
+        <div>@Model.Name</div>
+    </div>
+    <div class="col-3">
+        <label>Phone</label>
+        <div>@Model.PhoneNumber</div>
+    </div>
+      <div class="col-3">
+      <label>City</label>
+        <div>@Model.CityName</div>
+    </div>
+
+    <div class="col-3">
+        <a asp-action="Person" class="btn btn-danger" asp-controller="People">Back</a>
+    </div>
+
+</div>
