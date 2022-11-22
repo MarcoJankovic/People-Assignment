@@ -6,12 +6,17 @@
 
 <h1>Person</h1>
 
-<a asp-action="Create">Add Person</a>
+<a asp-action="Create" class="btn btn-success">Add Person</a>
 
 <div class="row">
 
-    <div class="col-4">Name</div>
-    <div class="col-4">PhoneNumber</div>
-    <div class="col-4">CityName</div>
+    <div class="col-3">Name</div>
+    <div class="col-3">PhoneNumber</div>
+    <div class="col-3">CityName</div>
+
 </div>
 
+@foreach (Person person in Model)
+{
+    <partial name="_PersonRow" model="person" />
+}
