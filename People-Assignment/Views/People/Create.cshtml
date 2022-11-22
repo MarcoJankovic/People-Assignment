@@ -1,4 +1,4 @@
-﻿@model People_Assignment.Models.ViewModels.CreatePersonViewModel
+﻿@model CreatePersonViewModel
 @{
     ViewData["Title"] = "Create";
 }
@@ -20,18 +20,16 @@
         </div>
         <div class="form-group">
             <label asp-for="CityName"></label>
-            <input class="form-control" asp-for="CityName" />
+            <input asp-for="CityName" class="form-control" list="cityList" />
             <span asp-validation-for="CityName"></span>
             <datalist id="cityList">
-                @foreach(string cityName in Model.CityList)
+                @foreach (string city in Model.CityList)
                 {
-                    <option value="@cityName">@cityName</option>
+                    <option value="@city">@city</option>
                 }
             </datalist>
         </div>
+        <input type="submit" value="Create" class="btn btn-success" />
+        <a asp-action="Person" asp-controller="People" class="btn btn-danger">Back</a>
     </form>
-
-    <button class="btn btn-primary ">Submit</button>
-
 </div>
-
