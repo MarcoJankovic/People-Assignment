@@ -1,9 +1,10 @@
 ﻿@model Person
 
 <div class="row">
-    <div class="col-3">@Model.Name</div>
-    <div class="col-3">@Model.PhoneNumber</div>
-    <div class="col-3">@Model.CityName</div>
-
-    <div class="btn btn-primary col-3">@Html.ActionLink("Details","Details","People", new {id = Model.PersonId})</div>
+    <div class="col-3 colPersonView">@Model.Name</div>
+    <div class="col-3 colPersonView">@Model.PhoneNumber</div>
+    <div class="col-3 colPersonView">@Model.CityName</div>
+    <div class="col-3 colPersonView">
+        <button class="btn-primary">@Html.ActionLink("Details","Details","People", new {id = Model.PersonId})</button>
+    </div>
 </div>
