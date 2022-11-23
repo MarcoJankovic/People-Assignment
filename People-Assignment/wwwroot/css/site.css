@@ -25,3 +25,16 @@ a {
     color:white !important;
     text-decoration:none;
 }
+
+.rowPersonView {
+    background-color: lightslategray;
+    color: black;
+    font-weight:bold;
+    border-bottom: 1px solid black;
+}
+
+.colPersonView {
+    background-color: dimgrey;
+    display:flex;
+    border-bottom: 1px solid black;
+}
