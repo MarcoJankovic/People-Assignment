@@ -31,9 +31,16 @@ namespace People_Assignment.Models.Services
             return _peopleRepo.Read();
         }
 
-        public bool Edit(int personId, CreatePersonViewModel editPeople)
+        public bool Edit(int personId, CreatePersonViewModel editPerson)
         {
-            return new();
+            Person originalPerson = FindById(personId);
+            if (originalPerson != null)
+            {
+                originalPerson.Name = editPerson.Name;
+                originalPerson.PhoneNumber = editPerson.PhoneNumber;
+                originalPerson.CityName = editPerson.CityName;
+            }
+            return _peopleRepo.Update(originalPerson);
         }
 
         public Person FindById(int personId)
