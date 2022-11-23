@@ -50,7 +50,9 @@ namespace People_Assignment.Models.Services
         }
         public bool Remove(int personId)
         {
-            return new();
+            Person person = _peopleRepo.Read(personId);
+
+            return _peopleRepo.Delete(person);
         }
 
 
