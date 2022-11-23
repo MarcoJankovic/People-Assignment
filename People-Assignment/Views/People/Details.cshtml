@@ -20,7 +20,8 @@
     </div>
 
     <div class="col-3">
-        <a asp-action="Person" class="btn btn-danger" asp-controller="People">Back</a>
+        <div class="btn btn-danger">@Html.ActionLink("Delete","Delete","People", new {id = Model.PersonId})</div>
+        <a asp-action="Person" class="btn btn-warning" asp-controller="People">Back</a>
     </div>
 
 </div>

@@ -53,8 +53,13 @@ namespace People_Assignment.Controllers
             {
                 return RedirectToAction(nameof(Person));
             }
-            return View(person);
-           
+            return View(person);          
+        }
+
+        public IActionResult Delete(int id)
+        {
+            _peopleService.Remove(id);
+            return RedirectToAction(nameof(Person));
         }
     }
 }
