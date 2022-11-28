@@ -56,6 +56,36 @@ namespace People_Assignment.Controllers
             return View(person);          
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Person person = _peopleService.FindById(id);
+
+            if (person == null)
+            {
+                return RedirectToAction(nameof(Person));
+            }
+            CreatePersonViewModel editPerson = new CreatePersonViewModel()
+            {
+                Name = person.Name,
+                PhoneNumber = person.PhoneNumber,
+                CityName = person.CityName,
+            };
+
+            return View(editPerson);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, CreatePersonViewModel editPerson)
+        {
+            if (ModelState.IsValid)
+            {
+                _peopleService.Edit(id, editPerson);
+                return RedirectToAction(nameof(Person));
+            }
+            _peopleService.Add(editPerson);
+            return View(editPerson);
+        }
         public IActionResult Delete(int id)
         {
             _peopleService.Remove(id);
