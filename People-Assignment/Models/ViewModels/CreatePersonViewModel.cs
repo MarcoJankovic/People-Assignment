@@ -1,5 +1,4 @@
-﻿using People_Assignment.Models.Data;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace People_Assignment.Models.ViewModels
 {
