@@ -1,0 +1,15 @@
+﻿@model PeopleViewModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="People" asp-action="Search" method="get">
+            <input type="text" name="SearchString" />
+            <input type="submit" value="Filter" />
+        </form>
+    </div>
+    <div id="result"></div>
+</div>

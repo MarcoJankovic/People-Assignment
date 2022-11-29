@@ -1,4 +1,35 @@
 ﻿@model List<Person>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>People page</h1>
+
+<a asp-action="Create" class="btn btn-success mb-3">Add Person</a>
+<br />
+<a asp-action="Search">Search</a>
+
+<br />
+<div class="row">
+    <div class="col-3">Name</div>
+    <div class="col-3">PhoneNumber</div>
+    <div class="col-3">City</div>
+</div>
+
+@foreach (Person person in Model)
+{
+    if (person != null)
+    {
+        <partial name="_PersonRow" model="person"></partial>
+    }
+}
+<br />
+
+
+
+
+
+@*@model List<Person>
 
 @{
     ViewData["Title"] = "Person";
@@ -7,6 +38,10 @@
 <h1>Person</h1>
 
 <a asp-action="Create" class="btn btn-success mb-3">Add Person</a>
+
+<a asp-action="Search">Search</a>
+
+<div id="result"></div>
 
 <div class="row rowPersonView">
 
@@ -18,5 +53,5 @@
 
 @foreach (Person person in Model)
 {
-        <partial name="_PersonRow" model="person" />
-}
+    <partial name="_PersonRow" model="person" />
+}*@

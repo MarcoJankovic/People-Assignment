@@ -53,7 +53,7 @@ namespace People_Assignment.Controllers
             {
                 return RedirectToAction(nameof(Person));
             }
-            return View(person);          
+            return View(person);
         }
 
         [HttpGet]
@@ -90,6 +90,23 @@ namespace People_Assignment.Controllers
         {
             _peopleService.Remove(id);
             return RedirectToAction(nameof(Person));
+        }
+
+        [HttpGet]
+        public IActionResult Search()
+        {
+            return View(new PeopleViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Search(string search)
+        {
+            List<Person> persons = _peopleService.Search(search);
+            if (persons != null)
+            {
+                return PartialView("_PersonRow", persons);
+            }
+            return BadRequest();
         }
     }
 }

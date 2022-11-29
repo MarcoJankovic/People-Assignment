@@ -41,19 +41,19 @@ namespace People_Assignment.Models.Repos
         public bool Update(Person person)
         {
             Person original = Read(person.PersonId);
-            if(original == null)
+            if (original == null)
             {
                 return false;
             }
             else
             {
-                original.Name= person.Name;
-                original.PhoneNumber= person.PhoneNumber;
-                original.CityName= person.CityName;
+                original.Name = person.Name;
+                original.PhoneNumber = person.PhoneNumber;
+                original.CityName = person.CityName;
                 return true;
             }
-
         }
+
         public bool Delete(Person person)
         {
             return peopleList.Remove(person);
