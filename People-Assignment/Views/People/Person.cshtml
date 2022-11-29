@@ -12,11 +12,11 @@
 
     <div class="col-3">Name</div>
     <div class="col-3">PhoneNumber</div>
-    <div class="col-3">CityName</div>
+    <div class="col-3">City</div>
 
 </div>
 
 @foreach (Person person in Model)
 {
-        <partial name="_PersonRow" model="person" />
+    <partial name="_PersonRow" model="person" />
 }
