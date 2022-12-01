@@ -1,20 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace People_Assignment.Models.ViewModels
 {
     public class CreatePersonViewModel
     {
-        [Display(Name = "Name")]
+        [DisplayAttribute(Name = "Name")]
         [Required]
         [StringLength(25)]
         public string? Name { get; set; }
 
-        [Display(Name = "PhoneNumber")]
+        [DisplayAttribute(Name = "PhoneNumber")]
         [Required]
         [StringLength(10)]
         public string? PhoneNumber { get; set; }
 
-        [Display(Name = "CityName")]
+        [DisplayAttribute(Name = "CityName")]
         [Required]
         public string? CityName { get; set; }
 
