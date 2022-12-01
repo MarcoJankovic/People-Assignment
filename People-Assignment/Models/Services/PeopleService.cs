@@ -61,7 +61,6 @@ namespace People_Assignment.Models.Services
                     searchPerson = searchPerson.Where(p => p.Name.ToUpper().Contains(search.ToUpper())).ToList();
                     searchPerson.Add(x);
                 }
-
             }
             if (searchPerson.Count == 0)
             {

@@ -18,28 +18,7 @@
 
 <a asp-controller="People" asp-action="Person" class="btn btn-secondary mb-2">Back to the list of people</a>
 <br />
+
 <a class="btn btn-danger" asp-controller="People" asp-action="Delete" asp-route-id="@Model.PersonId">Delete</a>
 
 <a asp-action="Edit" asp-controller="People" asp-route-id="@Model.PersonId" class="btn btn-warning">Edit</a>
-
-@*<div class="row rowPersonView">
-    <div class="col-3 colPersonView">
-        <label>Name</label>
-        <div>@Model.Name</div>
-    </div>
-    <div class="col-3 colPersonView">
-        <label>Phone</label>
-        <div>@Model.PhoneNumber</div>
-    </div>
-    <div class="col-3 colPersonView">
-      <label>City</label>
-        <div>@Model.CityName</div>
-    </div>
-
-    <div class="col-3 colPersonView">
-        <button class="btn-danger">@Html.ActionLink("Delete","Delete","People", new {id = Model.PersonId})</button>
-        <a asp-action="Person" class="btn-primary" asp-controller="Person">Edit</a>
-        <a asp-action="Person" class="btn-warning" asp-controller="People">Back</a>
-    </div>
-
-</div>*@
