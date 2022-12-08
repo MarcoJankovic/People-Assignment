@@ -101,10 +101,10 @@ namespace People_Assignment.Controllers
         [HttpPost]
         public IActionResult Search(string search)
         {
-            List<Person> persons = _peopleService.Search(search);
-            if (persons != null)
+            List<Person> people = _peopleService.Search(search);
+            if (search != null)
             {
-                return PartialView("_PersonRow", persons);
+                return PartialView("_PeopleTable", people);
             }
             return BadRequest();
         }

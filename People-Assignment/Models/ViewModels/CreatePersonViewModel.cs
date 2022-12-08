@@ -6,7 +6,7 @@ namespace People_Assignment.Models.ViewModels
     {
         [Display(Name = "Name")]
         [Required]
-        [StringLength(25)]
+        [StringLength(50)]
         public string? Name { get; set; }
 
         [Display(Name = "PhoneNumber")]
