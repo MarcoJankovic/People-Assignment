@@ -54,6 +54,7 @@ namespace People_Assignment.Models.Services
         {
             List<Person> searchPerson = _peopleRepo.Read();
 
+ 
             //foreach (Person x in _peopleRepo.Read())
             //{
             //    if (x.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
@@ -68,6 +69,9 @@ namespace People_Assignment.Models.Services
             //{
             //    throw new ArgumentException("Could not find what you where looking for");
             //}
+ 
+             
+             
             return searchPerson;
         }
 
