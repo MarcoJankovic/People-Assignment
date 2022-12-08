@@ -6,9 +6,11 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="People" asp-action="Search" method="get">
-            <input type="text" name="Search" />
-            <input type="submit" value="FilterString" />
+ 
+        <form onsubmit="submitSearchForm(event,'@Url.Action("Search","People")')">
+            <input id="search" type="text" name="Search" />
+            <input type="submit" value="Filter" />
+ 
         </form>
     </div>
     <div id="result"></div>
