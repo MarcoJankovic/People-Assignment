@@ -3,7 +3,6 @@ using People_Assignment.Models.Repos;
 using People_Assignment.Models.Data;
 using People_Assignment.Models.Services;
 using People_Assignment.Models.ViewModels;
-using System.Security.Cryptography;
 
 namespace People_Assignment.Controllers
 {
