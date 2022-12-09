@@ -87,8 +87,17 @@ namespace People_Assignment.Controllers
         }
         public IActionResult Delete(int id)
         {
-            _peopleService.Remove(id);
-            return RedirectToAction(nameof(Person));
+            Person person = _peopleService.FindById(id);
+
+            if (person == null)
+            {
+                return RedirectToAction(nameof(Person));
+            }
+            else
+            {
+                _peopleService.Remove(id);
+            }
+            return View();
         }
 
         [HttpGet]
@@ -100,7 +109,9 @@ namespace People_Assignment.Controllers
         [HttpPost]
         public IActionResult Search(string search)
         {
+ 
             List<Person> people = _peopleService.Search(search);
+ 
             if (search != null)
             {
                 return PartialView("_PeopleTable", people);
