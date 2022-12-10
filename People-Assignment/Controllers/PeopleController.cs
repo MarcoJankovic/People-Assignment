@@ -85,20 +85,6 @@ namespace People_Assignment.Controllers
             _peopleService.Add(editPerson);
             return View(editPerson);
         }
-        public IActionResult Delete(int id)
-        {
-            Person person = _peopleService.FindById(id);
-
-            if (person == null)
-            {
-                return RedirectToAction(nameof(Person));
-            }
-            else
-            {
-                _peopleService.Remove(id);
-            }
-            return View();
-        }
 
         [HttpGet]
         public IActionResult Search()
@@ -118,5 +104,20 @@ namespace People_Assignment.Controllers
             }
             return BadRequest();
         }
+        public IActionResult Delete(int id)
+        {
+            Person person = _peopleService.FindById(id);
+
+            if (person == null)
+            {
+                return RedirectToAction(nameof(Person));
+            }
+            else
+            {
+                _peopleService.Remove(id);
+            }
+            return View();
+        }
+
     }
 }
