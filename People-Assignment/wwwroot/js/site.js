@@ -11,3 +11,16 @@ function submitSearchForm(event,url) {
 
     $.post(url + '?search=' + input.value, result => resultTable.innerHTML = result);
 }
+
+function getPeopleListAjax(actionUrl) {
+    $.get(actionUrl, function (response) {
+        console.log("Response:", response);
+        document.getElementById("result").innerHTML = response;
+    });
+}
+//function getAnimalList(actionUrl) {
+//    $.get(actionUrl, function (response) {
+//        console.log("Response:", response);
+//        document.getElementById("result").innerHTML = response;
+//    });
+//}
