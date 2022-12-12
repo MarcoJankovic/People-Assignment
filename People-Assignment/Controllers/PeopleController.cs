@@ -119,5 +119,12 @@ namespace People_Assignment.Controllers
             return View();
         }
 
+        //// *********************** AJAX ************************** ////
+
+        public IActionResult PartialViewPeople()
+        {
+            return PartialView("_PeopleList", _peopleService.All());
+        }
+
     }
 }
