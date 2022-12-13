@@ -104,6 +104,7 @@ namespace People_Assignment.Controllers
             }
             return BadRequest();
         }
+
         public IActionResult Delete(int id)
         {
             Person person = _peopleService.FindById(id);
