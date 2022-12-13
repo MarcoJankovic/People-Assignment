@@ -41,7 +41,8 @@ namespace People_Assignment.Models.ViewModels
                     "Warsaw",
                     "Helsinki",
                     "Tokyo",
-                    "Beijing"
+                    "Beijing",
+                    "Rome"
                 };
             }
         }
