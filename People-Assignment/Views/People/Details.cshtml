@@ -5,7 +5,7 @@
 
 <h1>Person Details</h1>
 
-<div class="row rowPersonView bg-secondary text-black">
+<div class="row rowPersonView">
     <div class="col-4">Name</div>
     <div class="col-4">PhoneNumber</div>
     <div class="col-4">City</div>
@@ -16,9 +16,8 @@
     <div class="col-4">@Model.CityName</div>
 </div>
 
-<a asp-controller="People" asp-action="Person" class="btn btn-secondary mb-2">Back to the list of people</a>
 <br />
 
-<a class="btn btn-danger" asp-controller="People" asp-action="Delete" asp-route-id="@Model.PersonId">Delete</a>
-
-<a asp-action="Edit" asp-controller="People" asp-route-id="@Model.PersonId" class="btn btn-warning">Edit</a>
+<a class="btn btn" style="background-color:black; color:white;" asp-controller="People" asp-action="Delete" asp-route-id="@Model.PersonId" style="background-color:black">Delete</a>
+<a asp-action="Edit" asp-controller="People" asp-route-id="@Model.PersonId" class="btn btn-primary">Edit</a>
+<a asp-controller="People" asp-action="Person" class="btn btn-danger">Back</a>

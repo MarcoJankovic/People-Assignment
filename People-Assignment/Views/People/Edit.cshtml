@@ -27,13 +27,11 @@
                 <input asp-for="CityName" class="form-control" />
                 <span asp-validation-for="CityName" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-success" />
+                 <a asp-action="Person" asp-controller="People" class="btn btn-danger">Back</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Person" asp-controller="People" class="btn btn-secondary">Back to the list of people</a>
 </div>

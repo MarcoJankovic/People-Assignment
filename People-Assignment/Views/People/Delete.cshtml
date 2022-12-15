@@ -12,4 +12,10 @@
  
     <h4>Person</h4>
  
+    @using (Html.BeginForm("Delete", "People", FormMethod.Post))
+    {
+        <button class="btn btn" style="background-color:black; color:white" name="action" value="delete">Delete</button>
+        <button class="btn btn-danger" name="action" value="cancel">Cancel</button>
+    }
+
 </div>
