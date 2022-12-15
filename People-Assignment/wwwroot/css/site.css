@@ -46,3 +46,8 @@ footer {
     width: 100%;
     height: 2.5rem;
 }
+
+
+.row {
+    --bs-gutter-x: 0rem !important;
+}

@@ -1,21 +1,7 @@
 ﻿@model Person
 
-<br>
-
-
-
-<div class="row bg-dark">
-    <div class="col-4">Name</div>
-    <div class="col-4">PhoneNumber</div>
-    <div class="col-4">City</div>
+<div class="row bg-dark" style="border: solid 1px black;">
+    <div class="col-4">@Model.Name</div>
+    <div class="col-4">@Model.PhoneNumber</div>
+    <div class="col-4">@Model.CityName</div>
 </div>
-
-@*<table class="table table-striped bg-light">
-    <thead>
-        <tr>
-            <td class="col-4">@Model.Name</td>
-            <td class="col-4">@Model.PhoneNumber</td>
-            <td class="col-4">@Model.CityName</td>
-        </tr>
-    </thead>
-</table>*@
