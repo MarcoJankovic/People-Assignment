@@ -54,24 +54,19 @@ namespace People_Assignment.Models.Services
         {
             List<Person> searchPerson = _peopleRepo.Read();
 
- 
-            //foreach (Person x in _peopleRepo.Read())
-            //{
-            //    if (x.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        searchPerson = searchPerson.Where(p => p.Name.ToUpper().Contains(search.ToUpper())).ToList();
-            //        searchPerson.Add(x);
-            //    }
+            foreach (Person x in _peopleRepo.Read())
+            {
+                if (x.Name.Contains(search, StringComparison.OrdinalIgnoreCase))
+                {
+                    searchPerson = searchPerson.Where(p => p.Name.ToUpper().Contains(search.ToUpper())).ToList();
+                    searchPerson.Add(x);
+                }
+            }
 
-            //}
-            searchPerson = searchPerson.Where(p => p.Name.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
-            //if (searchPerson.Count == 0)
-            //{
-            //    throw new ArgumentException("Could not find what you where looking for");
-            //}
- 
-             
-             
+            if (searchPerson.Count == 0)
+            {
+                throw new ArgumentException("Could not find what you where looking for");
+            }
             return searchPerson;
         }
 

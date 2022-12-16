@@ -5,6 +5,15 @@
 
 <h2>People with Ajax</h2>
 
-<button class="btn-light mb-4" onclick="getPeopleListAjax('@Url.Action("PartialViewPeople","People")')">List of People</button>
+
+<div class="form-group col-sm-2">
+    <button class="btn btn-primary" onclick="getPeopleListAjax('@Url.Action("PartialViewPeople","People")')">List of People</button>
+    <input class="form-control" type="number" name="id" id="PersonId" placeholder="Person id" />
+</div>
+
+<br>
+<button class="btn btn-secondary" onclick="ajaxPost('@Url.Action("PartialViewDetails","People")', 'PersonId')">Search</button>
+
+<button class="btn btn" style="background-color:black; color:white;" onclick="ajaxPost('@Url.Action("AjaxDelete","People")', 'PersonId')">Delete</button>
 
 <div id="result"></div>
