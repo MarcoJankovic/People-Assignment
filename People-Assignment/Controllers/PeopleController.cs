@@ -102,7 +102,7 @@ namespace People_Assignment.Controllers
             {
                 return PartialView("_PeopleTable", people);
             }
-            return BadRequest();
+            return NotFound();
         }
 
         public IActionResult Delete(int id, string action)
@@ -145,10 +145,19 @@ namespace People_Assignment.Controllers
             {
                 return PartialView("_PersonDetails", person);
             }
-            return BadRequest();
+            return NotFound();
         }
 
+        public IActionResult AjaxDelete(int id)
+        {
+            Person person = _peopleService.FindById(id);
 
+            if(_peopleService.Remove(id))
+            {
+                return PartialView("_PeopleList", _peopleService.All());
+            }
+            return BadRequest();
+        }
 
     }
 }
