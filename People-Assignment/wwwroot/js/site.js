@@ -1,4 +1,11 @@
 ﻿
+function getPeopleListAjax(actionUrl) {
+    $.get(actionUrl, function (response) {
+        console.log("Response:", response);
+        document.getElementById("result").innerHTML = response;
+    });
+}
+
 function submitSearchForm(event, url) {
     event.preventDefault();
 
@@ -8,7 +15,6 @@ function submitSearchForm(event, url) {
     console.log(result);
     $.post(url + '?search=' + input.value, result => resultTable.innerHTML = result);
 }
-
 
 function ajaxPost(actionUrl, personID) {
 
@@ -23,19 +29,3 @@ function ajaxPost(actionUrl, personID) {
         document.getElementById("result").innerHTML = respons;
     })
 }
-
-
-function getPeopleListAjax(actionUrl) {
-    $.get(actionUrl, function (response) {
-        console.log("Response:", response);
-        document.getElementById("result").innerHTML = response;
-    });
-}
-
-
-//function getAnimalList(actionUrl) {
-//    $.get(actionUrl, function (response) {
-//        console.log("Response:", response);
-//        document.getElementById("result").innerHTML = response;
-//    });
-//}
