@@ -135,5 +135,20 @@ namespace People_Assignment.Controllers
             return PartialView("_PeopleList", _peopleService.All());
         }
 
+        [HttpPost]
+
+        public IActionResult PartialViewDetails(int id)
+        {
+            Person person = _peopleService.FindById(id);
+
+            if(person != null)
+            {
+                return PartialView("_PersonDetails", person);
+            }
+            return BadRequest();
+        }
+
+
+
     }
 }

@@ -1,16 +1,29 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-function submitSearchForm(event,url) {
+﻿
+function submitSearchForm(event, url) {
     event.preventDefault();
 
     const resultTable = document.getElementById('result');
     const input = document.getElementById('search');
 
+    console.log(result);
     $.post(url + '?search=' + input.value, result => resultTable.innerHTML = result);
 }
+
+
+function ajaxPost(actionUrl, personID) {
+
+    let inputElement = $("#" + personID);
+    let data = {
+        [inputElement.attr("name")]: inputElement.val()
+    }
+    console.log("inputEl:", inputElement);
+    console.log("data: ", data);
+    $.post(actionUrl, data, function (respons) {
+        console.log("Respons", respons);
+        document.getElementById("result").innerHTML = respons;
+    })
+}
+
 
 function getPeopleListAjax(actionUrl) {
     $.get(actionUrl, function (response) {
@@ -18,6 +31,8 @@ function getPeopleListAjax(actionUrl) {
         document.getElementById("result").innerHTML = response;
     });
 }
+
+
 //function getAnimalList(actionUrl) {
 //    $.get(actionUrl, function (response) {
 //        console.log("Response:", response);
