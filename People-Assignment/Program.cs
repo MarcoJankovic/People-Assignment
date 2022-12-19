@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using People_Assignment.Data;
+using People_Assignment.Models.Repos;
+
 namespace People_Assignment
 {
     public class Program
@@ -9,6 +13,11 @@ namespace People_Assignment
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddMvc();
+
+            builder.Services.AddDbContext<PeopleDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<IPeopleRepo, InMemoryPeopleRepo>();
 
 
             var app = builder.Build();
