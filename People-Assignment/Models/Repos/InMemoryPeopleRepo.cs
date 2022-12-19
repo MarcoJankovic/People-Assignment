@@ -1,4 +1,5 @@
-﻿using People_Assignment.Models.Data;
+﻿using People_Assignment.Data;
+using People_Assignment.Models.Data;
 using System.Data;
 using System.Diagnostics.Metrics;
 using System.Xml.Linq;
@@ -6,8 +7,7 @@ using System.Xml.Linq;
 namespace People_Assignment.Models.Repos
 {
     public class InMemoryPeopleRepo : IPeopleRepo
-
-    {
+    {       
         private static List<Person> peopleList = new List<Person>();
         private static int idCounter = 0;
 
