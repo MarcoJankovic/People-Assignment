@@ -8,6 +8,6 @@ namespace People_Assignment.Data
         public PeopleDbContext(DbContextOptions<PeopleDbContext> options) : base(options) 
         { }
 
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Person>? Persons { get; set; }
     }
 }
